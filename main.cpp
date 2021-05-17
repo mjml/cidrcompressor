@@ -41,7 +41,7 @@ int main (int argc, char* argv[])
     int std_thresh[] = {1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5, 6, 7, 10, 12, 14,
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0, 0};
 
-    std::cout << "CIDR bans:" << std::endl;
+    std::cout << "Compressed CIDR blocks:" << std::endl;
     
     root.visit_topdown_dfs([&] (Record& rec) -> bool { 
                             auto wildcard = 32-rec.prefix; 
