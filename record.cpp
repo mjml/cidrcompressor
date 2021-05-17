@@ -109,10 +109,10 @@ bool Record::add (Record* other)
         left->parent = this;
     } else if (right == nullptr) { // current has just one left child
         // IMPLICATION: The current node must be the root node or a newly created inner node, since non-root inner nodes always have two children.
-        if (cmpl == STRICT_LT) {
+        if (cmpl == STRICT_GT) {
             right = other;
             right->parent = this;
-        } else if (cmpl == STRICT_GT) {
+        } else if (cmpl == STRICT_LT) {
             right = left;
             left = other;
             left->parent = this;
@@ -129,7 +129,7 @@ bool Record::add (Record* other)
             right->count += other->count;
             return false;
         } else {
-            throw std::logic_error("Comparisons to left and right children don't make sense. Bail!");
+            throw std::logic_error("Comparisons to left child didn't make sense. Bail!");
         }
     } else { // medium cases: current has both left and right children
         // L&R both full
