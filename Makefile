@@ -2,7 +2,7 @@ CPPC=clang++
 INCLUDES=
 CPPFLAGS=-g $(INCLUDES)
 SRCS=main.cpp record.cpp
-OBJS=${SRCS:%.c=%.o}
+OBJS=${SRCS:%.cpp=%.obj}
 
 cidrcompressor: $(OBJS)
 	$(CPPC) $(OBJS) -o $@
@@ -10,3 +10,5 @@ cidrcompressor: $(OBJS)
 %.obj: %.cpp
 	$(CPPC) -c $^ -o $@
 
+clean:
+	rm -rf cidrcompressor *.obj
