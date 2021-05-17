@@ -64,5 +64,4 @@ struct Record {
   typedef std::function<bool(Record&)> Visitor;
   void visit_topdown_dfs (Visitor v);
 
-
 };

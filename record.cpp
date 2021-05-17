@@ -66,7 +66,7 @@ Record* Record::from_line (const std::string& line)
     std::smatch m;
     std::regex_search(line, m, cidrpat4);
 
-    if (m.size() < 4) return nullptr;
+    if (!(m[1].length() && m[2].length() && m[3].length() && m[4].length())) return nullptr;
     
     Record* rec = new Record();
     rec->bytes[3] = std::stoi(m[1].str());
