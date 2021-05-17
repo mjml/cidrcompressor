@@ -158,3 +158,10 @@ As you can see, most of the individual addresses (the /32 blocks) are simply pas
 
 However, when too many of these accumulate under a block, the entire block is banned.
 Here, the 104.140.62.0/26 block (64 addresses) and the 104.206.200.0/25 block (128 addresses) were each found from just 3 examples.
+
+The decision to aggregate address into a block is made using thresholds, given for each prefix length.
+
+A good starting set of these for mail relays is given in main.cpp. You'd have to modify the source and recompile if you
+  want more sensitivity or more specificity.
+
+I have reached my goal with this project and so it will likely not receive updates or maintenance in the future.
