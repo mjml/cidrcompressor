@@ -1,11 +1,11 @@
 CIDR Compressor
 ===============
 
-I wrote this little program to compress/condense lists of IPs that are found to be Junk mail relays.
+I wrote this little program to compress/condense lists of IPs that are found to be spam mail relays.
 
-For example, a Junk sender will often create their mail servers from a pool of IPs that they purchase
-  from an ISP that allows this sort of thing. This makes it difficult to ban them since they will
-	simply re-allocate their virtual machines each day and obtain new IPs.
+For example, a spam sender will often create their mail servers from a pool of IPs that they purchase
+  from an ISP. This makes it difficult to ban them since they will simply re-allocate their
+	virtual machines each day and obtain new IPs.
 
 This script detects this behaviour by considering CIDR blocks (partial IP addresses with a fixed prefix
   and a wildcard remainder).
@@ -14,8 +14,8 @@ When several addresses belong to the same CIDR block, this program counts up the
 Taking the size of the block (inversely with the prefix length) and a preset threshold on the number
   of allowable hits in a block, this program will output those CIDR blocks that have exceeded their
 	threshold.
-You can then deal with these large address blocks using a single CIDR pattern rather than having
-  to ban individual IP addresses.
+You can then deal with these larger address blocks using a single CIDR pattern rather than
+  the individual IP addresses.
 
 Since the entire IPv4 address space is divided up into allocation regions that are essentially
   CIDR blocks, this program can effectively capture IP allocation blocks that are millions in size
@@ -24,8 +24,10 @@ Since the entire IPv4 address space is divided up into allocation regions that a
 Example
 -------
 
-```
+The input format is just `x.y.z.a/prefix count` on each line.
+
 Input file: test5.txt
+```
 63.80.89.144/32 1
 173.232.90.16/32 1
 23.231.51.18/32 1
@@ -56,13 +58,15 @@ Input file: test5.txt
 170.130.29.130/32 1
 104.140.62.22/32 1
 104.206.200.28/32 1
+```
 
-
-Run:
-$ ./cidrcompressor <test4.txt
-
+Run as follows:
+```
+$ ./cidrcompressor <test5.txt
+```
 
 Output:
+```
 0.0.0.0/0 [31]
 | 0.0.0.0/1 [20]
 | | 0.0.0.0/2 [10]
