@@ -24,6 +24,7 @@ Since the entire IPv4 address space is divided up into allocation regions that a
 Example
 -------
 
+```
 Input file: test5.txt
 63.80.89.144/32 1
 173.232.90.16/32 1
@@ -147,3 +148,9 @@ Compressed CIDR blocks:
 173.232.87.25/32
 173.232.90.16/32
 185.106.30.178/32
+```
+
+As you can see, most of the individual addresses (the /32 blocks) are simply passed through as is.
+
+However, when too many of these accumulate under a block, the entire block is banned.
+Here, the 104.140.62.0/26 block (64 addresses) and the 104.206.200.0/25 block (128 addresses) were each found from just 3 examples.
