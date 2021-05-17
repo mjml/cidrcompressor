@@ -167,3 +167,8 @@ A good starting set of these for mail relays is given in main.cpp. You'd have to
   want more sensitivity or more specificity.
 
 I have reached my goal with this project and so it will likely not receive updates or maintenance in the future.
+
+Support
+=======
+
+If you find this useful or would like to see additions to it, consider supporting me on [Patreon](https://www.patreon.com/MichaelJoya).
