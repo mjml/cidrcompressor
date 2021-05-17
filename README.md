@@ -7,19 +7,18 @@ For example, a spam sender will often create their mail servers from a pool of I
   from an ISP. This makes it difficult to ban them since they will simply re-allocate their
 	virtual machines each day and obtain new addresses.
 
-This script detects this behaviour by considering CIDR blocks (partial IP addresses with a fixed prefix
+This code considers the larger CIDR blocks (partially-specified IP address ranges with a fixed prefix
   and a wildcard remainder).
 When several addresses belong to the same CIDR block, this program counts up the number of "hits"
-  in these umbrella blocks.
+  in such a block.
 Taking the size of the block (inversely with the prefix length) and a preset threshold on the number
   of allowable hits in a block, this program will output those CIDR blocks that have exceeded their
 	threshold.
-You can then deal with these larger address blocks using a single CIDR pattern rather than
-  the individual IP addresses.
 
-Since the entire IPv4 address space is divided up into allocation regions that are essentially
-  CIDR blocks, this program can effectively capture IP allocation blocks that are millions in size
-	from just a small number of examples.
+This identifies the CIDR blocks that contain a large number of the IP addresses specified.
+
+Since the entire IPv4 address space is divided up into CIDR allocation regions, this program can 
+  capture blocks that are millions in size from a small number of examples.
 
 If it seems complicated, here is an example:
 
