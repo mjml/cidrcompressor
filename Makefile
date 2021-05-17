@@ -5,10 +5,10 @@ SRCS=main.cpp record.cpp
 OBJS=${SRCS:%.cpp=%.obj}
 
 cidrcompressor: $(OBJS)
-	$(CPPC) $(OBJS) -o $@
+	$(CPPC) $(CPPFLAGS) $(OBJS) -o $@
 
 %.obj: %.cpp
-	$(CPPC) -c $^ -o $@
+	$(CPPC) $(CPPFLAGS) -c $^ -o $@
 
 clean:
 	rm -rf cidrcompressor *.obj

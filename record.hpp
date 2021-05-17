@@ -22,15 +22,17 @@ struct Record {
   Record* parent;
 
   // INVARIANT: A non-root inner node always has two children
+  // Note: this is slightly inaccurate if we allow the user to add CIDR blocks -- a leaf block could later become an inner block.
   Record* left;
   // INVARIANT: A non-root inner node always has two children
+  // Note: this is slightly inaccurate if we allow the user to add CIDR blocks -- a leaf block could later become an inner block.
   Record* right;
 
-  Record() : addr(0), prefix(0), count(0), parent(NULL), left(NULL), right(NULL) {}
+  Record() : addr(0), prefix(0), count(0), parent(nullptr), left(nullptr), right(nullptr) {}
   Record(const Record& other) = delete;
   Record(Record&& other);
   Record(uint32_t _addr, int _prefix)
-      : prefix(_prefix), addr(_addr), count(0) {}
+      : prefix(_prefix), addr(_addr), count(0), parent(nullptr), left(nullptr), right(nullptr) {}
   ~Record();
 
   // move assignment
@@ -46,12 +48,15 @@ struct Record {
   void merge_ordered (Record& r1, Record& r2, Record& r3);
 
   // Merge two records to create an "inner node" record
-  static Record&& combine(const Record& r1, const Record& r2);
+  static Record combine(const Record& r1, const Record& r2);
 
   // Parse a record from a line
   static Record* from_line(const std::string& line);
 
   // returns success
   bool add(Record* record);
+
+  // pretty-prints the tree
+  void print(int level=0);
 
 };

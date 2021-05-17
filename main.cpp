@@ -15,24 +15,27 @@ int main (int argc, char* argv[])
     int linenum;
     std::string line;
     uint8_t     prefix;
-    std::regex  cidrpat4("(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})(/(\\d{1,2}))?");
 
     // Read CIDR records and counts from stdin
     while (!std::cin.eof()) {   
-        
+        linenum++;
         std::getline(std::cin, line, '\n');
-        
+        std::cout << "line: " << line << std::endl;
         Record* record = Record::from_line(line);
-        if (!root.add(record)) {
+        if (record) {
+          if (!root.add(record)) {
             delete record;
             record = nullptr;
+          } 
         } else {
-            std::cerr << "Warning, couldn't parse line " << linenum << std::endl << std::flush;
+            if (!std::cin.eof()) {
+                std::cerr << "Malformed record @" << linenum << ": " << line << std::endl;
+            }
         }
-        
     }
 
-
+    // print the tree for fun
+    root.print();
     
     return 0;
 }
