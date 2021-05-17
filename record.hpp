@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <list>
 #include <string>
+#include <functional>
 
 struct Record;
 
@@ -58,5 +59,10 @@ struct Record {
 
   // pretty-prints the tree
   void print(int level=0);
+
+  // visits each record beneath
+  typedef std::function<bool(Record&)> Visitor;
+  void visit_topdown_dfs (Visitor v);
+
 
 };

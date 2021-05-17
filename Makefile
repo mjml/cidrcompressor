@@ -1,4 +1,4 @@
-CPPC=clang++
+CPPC=g++
 INCLUDES=
 CPPFLAGS=-g $(INCLUDES)
 SRCS=main.cpp record.cpp
