@@ -5,7 +5,7 @@ I wrote this little program to compress/condense lists of IPs that are found to 
 
 For example, a spam sender will often create their mail servers from a pool of IPs that they purchase
   from an ISP. This makes it difficult to ban them since they will simply re-allocate their
-	virtual machines each day and obtain new IPs.
+	virtual machines each day and obtain new addresses.
 
 This script detects this behaviour by considering CIDR blocks (partial IP addresses with a fixed prefix
   and a wildcard remainder).
@@ -20,6 +20,8 @@ You can then deal with these larger address blocks using a single CIDR pattern r
 Since the entire IPv4 address space is divided up into allocation regions that are essentially
   CIDR blocks, this program can effectively capture IP allocation blocks that are millions in size
 	from just a small number of examples.
+
+If it seems complicated, here is an example:
 
 Example
 -------
