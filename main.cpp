@@ -17,9 +17,9 @@ int main (int argc, char* argv[])
     int linenum;
     std::string line;
 
-    po::options_description desc("Allowed options");
+    po::options_description desc("\nCIDR Compressor v0.1\n  http://github.com/mjml/cidrcompressor\n  written by Michael Joya (mike@michaeljoya.com)\n\nInput taken from stdin, line format:\n  a.b.c.d(/prefix) (count)\n\nAllowed options");
     desc.add_options()
-    ("help",          "Produce help message")
+    ("help,h",          "Print help message")
     ("show-tree,t",   "Print CIDR block tree")
     ("block-only,b",  "Print only blocks with prefix smaller than 32\nThis will omit individual addresses.");
 
