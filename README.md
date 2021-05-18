@@ -26,6 +26,7 @@ Example
 -------
 
 The input format is just `x.y.z.a/prefix count` on each line.
+The prefix and count are optional. Count is defaulted to 1 if not provided.
 
 Input file: test5.txt
 ```
