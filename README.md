@@ -171,4 +171,4 @@ I have reached my goal with this project and so it will likely not receive updat
 Support
 =======
 
-If you find this useful, [buy me a cup of tea](https://www.paypal.com/donate?hosted_button_id=HZFD6FX6LHX5G) or (buy me a slice of vegan pizza)[https://www.paypal.com/donate?hosted_button_id=HZFD6FX6LHX5G] via PayPal.
+If you find this useful, [buy me a cup of tea](https://www.paypal.com/donate?hosted_button_id=HZFD6FX6LHX5G) or [buy me a slice of vegan pizza](https://www.paypal.com/donate?hosted_button_id=HZFD6FX6LHX5G) via PayPal.
