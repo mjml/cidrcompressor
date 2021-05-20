@@ -166,7 +166,7 @@ The decision to aggregate addresses into a block is made using thresholds, given
 A good starting set of these for mail relays is given in main.cpp. You'd have to modify the source and recompile if you
   want more sensitivity or more specificity.
 
-I have reached my goal with this project and so it will likely not receive updates or maintenance in the future.
+I have reached my goal with this project and so it will likely not receive updates or maintenance in the future, unless commissioned.
 
 Support
 =======
