@@ -14,8 +14,8 @@ Record parse_record (const std::string& line);
 void node_to_ios(std::ostream& ios, Record& rec);
 void edge_to_ios(std::ostream&ios, Record& rec, Record* child);
 
-int std_thresh[] = {1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5, 6, 7, 10, 12, 14, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0};
+int std_thresh[] = {1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5, 6, 7, 10, 12, 14, 15,
+                    16, 18, 20, 22, 48, 80, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0};
 
 int main (int argc, char* argv[])  
 {
